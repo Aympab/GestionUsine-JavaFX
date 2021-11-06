@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPanePrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #C1E0FF;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.UniteController">
+   <children>
+      <AnchorPane fx:id="anchorPaneHead" prefHeight="88.0" prefWidth="600.0" style="-fx-background-color: #3399ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="titleView" alignment="CENTER" prefHeight="88.0" prefWidth="600.0" text="Unités" textAlignment="CENTER" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Calibri Light" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="retourButton" layoutX="516.0" layoutY="21.0" mnemonicParsing="false" onAction="#onRetourButtonClicked" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </AnchorPane>
+      <TabPane fx:id="tabPaneUnite" layoutY="88.0" prefHeight="312.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
+        <tabs>
+          <Tab fx:id="tabMesUnite" text="Mes Unités">
+            <content>
+              <AnchorPane fx:id="anchorPaneUnite" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tabUnites" prefHeight="282.8" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="col_codeUnite" prefWidth="335.0" text="Code unique" />
+                            <TableColumn fx:id="col_libelleUnite" minWidth="0.0" prefWidth="138.0" text="Libelle" />
+                              <TableColumn fx:id="col_abreviationUnite" prefWidth="126.0" text="Abréviation" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabNouvUnite" text="Nouvelle Unité">
+            <content>
+              <AnchorPane fx:id="anchorPaneProduit" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="validationButtonUnite" layoutX="354.0" layoutY="131.0" mnemonicParsing="false" onAction="#sauvegarderUnite" style="-fx-background-color: #C1E0FF #C1E0FF;" AnchorPane.leftAnchor="354.0" AnchorPane.topAnchor="131.0">
+                           <graphic>
+                              <ImageView fx:id="checkUnite" fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/check.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <GridPane layoutX="46.0" layoutY="45.0" prefHeight="78.0" prefWidth="244.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <TextField fx:id="libelNouvUnite" GridPane.columnIndex="1" />
+                              <TextField fx:id="abrevNouvUnite" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label prefHeight="63.2" prefWidth="165.2" text="Nom complet " AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label prefHeight="63.2" prefWidth="165.2" text="Abréviation" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

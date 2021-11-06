@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<!-- xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" -->
+
+<AnchorPane fx:id="backgroundAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #C1E0FF;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.AccueilController">
+   <children>
+      <AnchorPane fx:id="barreHautAnchor" prefHeight="88.0" prefWidth="600.0" style="-fx-background-color: #3399ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="labelTitre" alignment="CENTER" prefHeight="88.0" prefWidth="600.0" text="Production de Drones" textAlignment="CENTER" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Calibri Light" size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <GridPane alignment="CENTER_RIGHT" layoutY="113.0" prefHeight="355.0" prefWidth="800.0" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="113.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="311.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="102.99998779296875" minHeight="10.0" prefHeight="86.99998779296875" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="54.200012207031264" minHeight="10.0" prefHeight="23.111117892795136" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="107.99999321831598" minHeight="10.0" prefHeight="102.55555894639757" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="58.79998779296875" minHeight="10.0" prefHeight="24.888892279730896" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="110.66669040256073" minHeight="10.0" prefHeight="95.00001356336804" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="46.600006103515625" minHeight="10.0" prefHeight="25.33331976996527" valignment="BOTTOM" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="buttonLinkTest" alignment="CENTER" mnemonicParsing="false" onAction="#onTestButtonClicked" prefHeight="80.0" prefWidth="80.0">
+               <graphic>
+                  <ImageView fx:id="imageTest" fitHeight="75.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/testPass.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="listeChainesButton" alignment="CENTER" mnemonicParsing="false" onAction="#onListeChainesButtonClicked" prefHeight="80.0" prefWidth="80.0" GridPane.rowIndex="2">
+               <graphic>
+                  <ImageView fitHeight="62.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/chaineProduction.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ReapproButton" alignment="CENTER" mnemonicParsing="false" onAction="#onReapproButtonClicked" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/icons8-buying-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="labelButtonTest" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="48.0" text="Tests" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonStock" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#onStockButtonClicked" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1">
+               <graphic>
+                  <ImageView fitHeight="77.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/icons8-product-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="labelButtonTest1" prefHeight="17.0" prefWidth="41.0" text="Stock" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelButtonTest11" contentDisplay="CENTER" prefHeight="18.0" prefWidth="155.0" text="Chaines de Production" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelButtonTest112" contentDisplay="CENTER" prefHeight="17.0" prefWidth="83.0" text="Commandes" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="nouvelleChaineButton" mnemonicParsing="false" onAction="#onNouvelleChaineButtonClicked" prefHeight="27.0" prefWidth="250.0" text="Nouvelle Chaine de Production" GridPane.columnIndex="2" />
+            <Button fx:id="NouvelElementButton" mnemonicParsing="false" onAction="#onNouvelElementButtonClicked" prefHeight="27.0" prefWidth="250.0" text="Nouvel Element" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="NewManuelButton" mnemonicParsing="false" onAction="#onNewManuelButtonClicked" prefHeight="27.0" prefWidth="250.0" text="Nouveau Manuel de Production" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="newMethodeButton" mnemonicParsing="false" onAction="#onNewMethodButtonClicked" prefHeight="27.0" prefWidth="250.0" text="Nouvelle Methode de Production" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="uniteButton" mnemonicParsing="false" onAction="#onUniteButtonClicked" prefHeight="27.0" prefWidth="250.0" text="Unités de mesure" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button fx:id="planifButton" mnemonicParsing="false" onAction="#onPlanifButtonClicked" prefHeight="80.0" prefWidth="80.0" GridPane.rowIndex="4">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/chainage.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label text="Planification à la chaîne" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="planifSemaineButton" mnemonicParsing="false" onAction="#onPlanifSemaineButtonClicked" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/calendar.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label text="Planification hebdomadaire" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <GridPane layoutY="627.0" prefHeight="30.0" prefWidth="445.0" AnchorPane.bottomAnchor="-157.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>

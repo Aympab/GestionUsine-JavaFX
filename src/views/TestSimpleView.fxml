@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPanePrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #FFA07A#FFA07A;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.TestSimpleController">
+   <children>
+      <AnchorPane fx:id="anchorPaneHead" prefHeight="88.0" prefWidth="600.0" style="-fx-background-color: #ED7F10#ED7F10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="titleView" alignment="CENTER" prefHeight="88.0" prefWidth="600.0" text="Création d'un Test" textAlignment="CENTER" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Calibri Light" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="retourButton" layoutX="516.0" layoutY="31.0" mnemonicParsing="false" onAction="#onRetourButtonClicked" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </AnchorPane>
+      <SplitPane fx:id="splitPaneNewTest" dividerPositions="0.5" layoutY="88.0" prefHeight="312.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
+        <items>
+          <AnchorPane fx:id="anchorPaneNewTest" minHeight="0.0" minWidth="0.0" prefHeight="244.0" prefWidth="295.0">
+               <children>
+                  <SplitPane dividerPositions="0.3897058823529412" orientation="VERTICAL" prefHeight="410.0" prefWidth="396.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ComboBox fx:id="comboBoxChaines" layoutX="14.0" layoutY="52.0" onAction="#onActionComboBox" prefHeight="27.0" prefWidth="253.0" promptText="Chaine de Production" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="52.0" />
+                              <TextField fx:id="nomTest" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="205.0" text="Nom du Test" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="177.0" AnchorPane.topAnchor="14.0" />
+                              <Spinner fx:id="spinNivAct" editable="true" layoutX="149.0" layoutY="101.0" prefHeight="27.0" prefWidth="118.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="101.0" />
+                              <Label fx:id="labelNiveauActivation" layoutX="14.0" layoutY="106.0" prefHeight="17.0" prefWidth="160.0" text="Niveau d'Activation :" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="106.0" />
+                              <Button fx:id="lancerTest" layoutX="325.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickLancerTest" prefHeight="39.0" prefWidth="73.0" text="Tester" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="17.0" />
+                              <Button fx:id="sauvegarderTestButton" layoutX="340.0" layoutY="9.0" mnemonicParsing="false" onAction="#sauvegarderTest" AnchorPane.rightAnchor="10.799999999999997" AnchorPane.topAnchor="9.0">
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/download.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Sauvegarder test" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Label fx:id="labelNomChaine" layoutX="29.0" layoutY="5.0" prefHeight="17.0" prefWidth="336.0" text="ChaineNom" AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="5.0" />
+                              <Label layoutX="29.0" layoutY="30.0" prefHeight="17.0" prefWidth="71.0" text="Methode :" />
+                              <Label layoutX="29.0" layoutY="57.0" prefHeight="17.0" prefWidth="61.0" text="Manuel :" />
+                              <Label fx:id="labelNomMethode" layoutX="116.0" layoutY="30.0" prefHeight="17.0" prefWidth="284.0" text="methNOm" />
+                              <Label fx:id="labelNomManuel" layoutX="116.0" layoutY="57.0" prefHeight="17.0" prefWidth="270.0" text="manuelNom" />
+                              <AnchorPane layoutX="7.0" layoutY="76.0" prefHeight="156.0" prefWidth="379.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.800000000000011" AnchorPane.topAnchor="76.0">
+                                 <children>
+                                    <Accordion prefHeight="156.0" prefWidth="379.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <panes>
+                                        <TitledPane animated="false" text="Elements en entrée">
+                                             <content>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="listeMatIn" prefHeight="219.2" prefWidth="377.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="col_libelMatIn" prefWidth="134.80000364780426" text="Libelle" />
+                                                          <TableColumn fx:id="col_qteUniteElementMatIn" prefWidth="96.80001068115234" text="Qte nécéssaire" />
+                                                            <TableColumn fx:id="col_prixAchatTotalMatIn" prefWidth="108.7999267578125" text="Coût total" />
+                                                        </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </TitledPane>
+                                        <TitledPane animated="false" text="Elements en sortie">
+                                             <content>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="listeMatOut" prefHeight="219.2" prefWidth="377.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="col_libelMatOut" prefWidth="133.20002043247223" text="Libelle" />
+                                                          <TableColumn fx:id="col_qteUniteElementMatOut" prefWidth="105.19998168945312" text="Qte produite" />
+                                                            <TableColumn fx:id="col_prixVenteTotalMatOut" prefWidth="105.19993591308594" text="Prix vente total" />
+                                                        </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </TitledPane>
+                                      </panes>
+                                    </Accordion>
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="anchorPaneRecapitulatif" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <AnchorPane prefHeight="88.0" prefWidth="396.0" AnchorPane.bottomAnchor="322.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="15.0" layoutY="15.0" prefHeight="17.0" prefWidth="82.0" text="Résultat de :" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                        <Label layoutX="14.0" layoutY="32.0" prefHeight="17.0" prefWidth="90.0" text="Date du test :" AnchorPane.leftAnchor="14.0" />
+                        <Label layoutX="333.0" layoutY="15.0" prefHeight="17.0" prefWidth="61.0" text="Possible :" AnchorPane.rightAnchor="11.0" />
+                        <Label layoutX="15.0" layoutY="48.0" prefHeight="17.0" prefWidth="71.0" text="Bénéfice :" AnchorPane.leftAnchor="15.0" />
+                        <Label layoutX="13.0" layoutY="66.0" prefHeight="17.0" prefWidth="90.0" text="Durée totale :" AnchorPane.leftAnchor="14.0" />
+                        <Label fx:id="nomResultatTest" layoutX="112.0" layoutY="15.0" prefHeight="17.0" prefWidth="190.0" text="Label" />
+                        <Label fx:id="dateResultatTest" layoutX="111.0" layoutY="32.0" prefHeight="17.0" prefWidth="202.0" text="Label" />
+                        <Label fx:id="labelBenefice" layoutX="110.0" layoutY="48.0" prefHeight="17.0" prefWidth="202.0" text="Label" />
+                        <Label fx:id="labelDureeTotale" layoutX="110.0" layoutY="66.0" prefHeight="17.0" prefWidth="202.0" text="Label" />
+                        <ImageView fx:id="imagePossible" fitHeight="48.0" fitWidth="48.0" layoutX="323.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/possible.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="82.0" prefHeight="260.0" prefWidth="396.0" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="82.0">
+                     <children>
+                        <Accordion layoutY="14.0" prefHeight="260.0" prefWidth="396.0" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+                          <panes>
+                            <TitledPane animated="false" text="Element manquants">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableListeManquants" layoutY="-16.0" prefHeight="183.6" prefWidth="394.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="col_Libel_Manquants" prefWidth="141.60000574588776" text="Libelle" />
+                                              <TableColumn fx:id="col_Qte_Manquants" prefWidth="120.79995727539062" text="Qte manquante" />
+                                                <TableColumn fx:id="col_prixAchatTotal_Manquants" prefWidth="104.00006103515625" text="Coût manquant" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane animated="false" text="Elements consommés">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableListeConsommes" prefHeight="183.6" prefWidth="394.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="col_Libel_Consommes" prefWidth="128.79998743534088" text="Libelle" />
+                                              <TableColumn fx:id="col_Qte_Consommes" prefWidth="106.39996337890625" text="Qte consommée" />
+                                                <TableColumn fx:id="col_prixAchatTotal_Consommes" prefWidth="107.19998168945312" text="Coût" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane animated="false" text="Elements produits">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableListeProduits" prefHeight="183.6" prefWidth="394.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="col_Libel_Produits" prefWidth="163.19998133182526" text="Libelle" />
+                                              <TableColumn fx:id="col_Qte_Produits" prefWidth="98.80001831054688" text="Qte produite" />
+                                                <TableColumn fx:id="col_prixVente_Produits" prefWidth="101.19996643066406" text="Prix vente" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="downloadButton" layoutX="332.0" layoutY="357.0" mnemonicParsing="false" onAction="#sauvegarderResultat" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="14.0">
+                     <graphic>
+                        <ImageView fx:id="downloadButtonImage" fitHeight="44.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/download.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Sauvegarder résultat" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="buttonProduire" layoutX="237.0" layoutY="364.0" mnemonicParsing="false" style="-fx-background-color: #FAA580 #FAA580;" text="Produire" AnchorPane.bottomAnchor="19.0" AnchorPane.rightAnchor="87.0" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

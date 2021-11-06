@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPanePrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #C1E0FF;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.NouvElementController">
+   <children>
+      <AnchorPane fx:id="anchorPaneHead" prefHeight="88.0" prefWidth="600.0" style="-fx-background-color: #3399ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="titleView" alignment="CENTER" prefHeight="88.0" prefWidth="600.0" text="Nouvelle Matière" textAlignment="CENTER" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Calibri Light" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="retourButton" layoutX="518.0" layoutY="21.0" mnemonicParsing="false" onAction="#onRetourButtonClicked" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </AnchorPane>
+      <TabPane fx:id="tabPaneAddMatiere" layoutY="88.0" prefHeight="312.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
+        <tabs>
+          <Tab fx:id="tabMP" text="Matière Première">
+            <content>
+              <AnchorPane fx:id="anchorPaneMP" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="definitionMP" layoutX="14.0" layoutY="22.0" prefHeight="23.0" prefWidth="579.0" text="Articles achetés par l'usine pour la production de nouvelles matières." AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="22.0" />
+                        <Button fx:id="validationButton" layoutX="522.0" layoutY="213.0" mnemonicParsing="false" onAction="#sauvegarderMP" style="-fx-background-color: #C1E0FF #C1E0FF;" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="24.0">
+                           <graphic>
+                              <ImageView fx:id="check" fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/check.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <GridPane layoutX="30.0" layoutY="63.0" prefHeight="133.0" prefWidth="354.0" AnchorPane.leftAnchor="30.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.60000610351562" minWidth="10.0" prefWidth="155.39999389648438" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="198.60000610351562" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <TextField fx:id="libelleMP" GridPane.columnIndex="1" />
+                              <ChoiceBox fx:id="choiceBoxUnite" prefHeight="25.0" prefWidth="205.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="prixAchatMP" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="14.0" prefHeight="45.2" prefWidth="177.2" text="Libellé matière" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="14.0" prefHeight="45.2" prefWidth="177.2" text="Unité de mesure" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="14.0" prefHeight="45.2" prefWidth="177.2" text="Pirx d'achat unitaire" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabProduit" text="Produit">
+            <content>
+              <AnchorPane fx:id="anchorPaneProduit" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="definitionProduit" layoutX="30.0" layoutY="27.0" prefHeight="23.0" prefWidth="435.0" text="Articles produits par l'usine puis mis en vente." AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="151.0" AnchorPane.topAnchor="22.0" />
+                        <Button fx:id="validationButtonProduit" layoutX="532.0" layoutY="219.0" mnemonicParsing="false" onAction="#sauvegarderProduit" style="-fx-background-color: #C1E0FF #C1E0FF;" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="24.0">
+                           <graphic>
+                              <ImageView fx:id="checkProduit" fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/check.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <GridPane layoutX="30.0" layoutY="63.0" prefHeight="133.0" prefWidth="354.0" AnchorPane.leftAnchor="30.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.60000610351562" minWidth="10.0" prefWidth="155.39999389648438" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="198.60000610351562" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="libelleProduit" GridPane.columnIndex="1" />
+                              <ChoiceBox fx:id="choiceBoxUnite1" prefHeight="25.0" prefWidth="205.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="prixVenteProduit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="14.0" prefHeight="45.2" prefWidth="177.2" text="Libellé produit" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="14.0" prefHeight="45.2" prefWidth="177.2" text="Unité de mesure" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="14.0" prefHeight="45.2" prefWidth="177.2" text="Pirx de vente unitaire" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabElement" text="Element">
+               <content>
+                  <AnchorPane fx:id="anchorPaneElement" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="validationButtonElement" mnemonicParsing="false" onAction="#sauvegarderElement" style="-fx-background-color: #C1E0FF #C1E0FF;" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="24.0">
+                           <graphic>
+                              <ImageView fx:id="checkElement" fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/check.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="definitionElement" prefHeight="23.0" prefWidth="578.0" text="Articles produits par l'usine qui a pour but de participer à la production de nouvelles matières." AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="22.0" />
+                        <GridPane layoutX="30.0" layoutY="63.0" prefHeight="118.0" prefWidth="354.0" AnchorPane.leftAnchor="30.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.60000610351562" minWidth="10.0" prefWidth="155.39999389648438" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="198.60000610351562" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="libelleElement" GridPane.columnIndex="1" />
+                              <ChoiceBox fx:id="choiceBoxUnite2" prefHeight="25.0" prefWidth="205.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="14.0" prefHeight="45.2" prefWidth="177.2" text="Libellé élément" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="14.0" prefHeight="45.2" prefWidth="177.2" text="Unité de mesure" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabMPVendable" text="Matière Première Vendable">
+               <content>
+                  <AnchorPane fx:id="anchorPaneMPVendable" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="validationButtonMPVendable" mnemonicParsing="false" onAction="#sauvegarderMPVendable" style="-fx-background-color: #C1E0FF #C1E0FF;" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="24.0">
+                           <graphic>
+                              <ImageView fx:id="checkMPVendable" fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/check.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="definitionMPVendable" prefHeight="23.0" prefWidth="532.0" text="Articles achetés puis mis en vente, ils ne rentrent pas dans les chaines de production." AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="22.0" />
+                        <GridPane layoutX="30.0" layoutY="63.0" prefHeight="156.0" prefWidth="385.0" AnchorPane.leftAnchor="30.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.60000610351562" minWidth="10.0" prefWidth="155.39999389648438" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="198.60000610351562" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="libelleMPVendable" GridPane.columnIndex="1" />
+                              <ChoiceBox fx:id="choiceBoxUnite3" prefHeight="25.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="prixAchatMPVendable" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="14.0" prefHeight="45.2" prefWidth="177.2" text="Libellé MP vendable" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="14.0" prefHeight="45.2" prefWidth="177.2" text="Unité de mesure" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="14.0" prefHeight="45.2" prefWidth="177.2" text="Pirx d'achat unitaire" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Label prefHeight="45.2" prefWidth="177.2" text="Pirx de vente unitaire" GridPane.rowIndex="3" />
+                              <TextField fx:id="prixVenteMPVendable" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
